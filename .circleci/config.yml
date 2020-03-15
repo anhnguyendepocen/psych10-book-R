@@ -6,7 +6,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "fd:be:ca:96:17:fa:c6:5b:0c:0f:15:25:e7:2d:15:25"
+            - "16:24:d9:0f:6b:81:7f:47:d4:48:14:86:3d:2d:2a:ba"
       - checkout
       - run:
            name: rendering pdf

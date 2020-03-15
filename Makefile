@@ -21,9 +21,7 @@ clean:
 	rm -rf _bookdown_files bookdown-demo.*
 
 render-gitbook:
-	cp _gitbook_99-References.Rmd 99-References.Rmd
 	echo "bookdown::render_book('index.Rmd', 'bookdown::gitbook')" | R --no-save
-	rm 99-References.Rmd
 
 render-epub-mathjax:
 	cp _gitbook_99-References.Rmd 99-References.Rmd
@@ -31,15 +29,11 @@ render-epub-mathjax:
 	rm 99-References.Rmd
 
 render-epub:
-	cp _gitbook_99-References.Rmd 99-References.Rmd
 	echo "bookdown::render_book('index.Rmd', 'bookdown::epub_book',)" | R --no-save
-	rm 99-References.Rmd
 
 render-pdf:
 	echo "rendering pdf - TBD"
-	cp _latex_99-References.Rmd 99-References.Rmd
 	echo "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')" | R --no-save
-	rm 99-References.Rmd
 
 render-pdf-docker:
 	docker run -it -v $(shell pwd):/book -w /book --entrypoint="" $(DOCKER_USERNAME)/statsthinking21  make render-pdf

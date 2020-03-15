@@ -1,0 +1,65 @@
+---
+title: "R companion to: Statistical Thinking for the 21st Century"
+author: "Copyright 2020 Russell A. Poldrack"
+date: "Draft: `r Sys.Date()`"
+knit: "bookdown::render_book"
+bibliography: ["psych10-book.bib"]
+biblio-style: "apalike"
+documentclass: book
+link-citations: yes
+github-repo: poldrack/psych10-book
+description: "A book about R for statistics."
+always_allow_html: yes
+fontsize: 12pt
+monofont: "Source Code Pro"
+monofontoptions: "Scale=0.7"
+output:
+  bookdown::pdf_book:
+    keep_tex: yes
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+    config:
+      edit: https://github.com/poldrack/psych10-book/edit/master/%s
+    includes:
+      in_header:
+        - google_analytics.html
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.height=6, #echo=FALSE, 
+                      warning=FALSE, message=FALSE)
+```
+
+## Preface
+
+This book is a companion to my open-source statistical textbook, [Statstical thinking for the 21st Century](http://statsthinking21.org).  It is meant to provide an introduction to how to use R to analyze data and build statistical models. The chapters in this book directly follow those in the main book.
+
+## Why R?
+
+In my course, students learn to analyze data hands-on using the R language.  The question "Why R?" could be interpreted to mean "Why R instead of a graphical software package like (insert name here)?".  After all, most of the students who enroll in my class have never programmed before, so teaching them to program is going to take away from instruction in statistical concepts.  My answer is that I think that the best way to learn statistical tools is to work directly with data, and that working with graphical packages insulates one from the data and methods in way that impedes true understanding.  In addition, for many of the students in my class this may be the only course in which they are exposed to programming; given that programming is an essential ability in a growing number of academic fields, I think that providing these students with basic programming literacy is critical to their future success, and will hopefully inspire at least a few of them to learn more.
+
+The question could also be interpreted to mean "Why R instead of (insert language here)?".  On this question I am much more conflicted, because I deeply dislike R as a programming language (I greatly prefer to use Python for my own work; I am currently working on a Python companion to the book).  Why then do I use R? The first reason is that R has become the "lingua franca" for statistical analysis.  There are a number of tools that I use in this book (such as the linear modeling tools in the `lme4` package and the Bayes factor tools in the `BayesFactor` package) that are simply not available in other languages. 
+
+The second reason is that the free Rstudio software makes using R relatively easy for new users.  In particular, I like the RMarkdown Notebook feature that allows the mixing of narrative and executable code with integrated output.  It's similar in spirit to the Jupyter notebooks that many of us use for Python programming, but I find it easier to deal with because you edit it as a plain text file, rather than through an HTML interface.  In my class, I give students a skeleton RMarkdown file for problem sets, and they submit the file with their solution added, which I then score using a set of automated grading scripts. 
+
+The third reason is practical -- nearly all of the potential teaching assistants (mostly graduate students in our department) have experience with R, since our graduate statistics course uses R.  In fact, most of them have much greater skill with R than I do!  On the other hand, relatively few of them have expertise in Python.  Thus, if I want an army of knowledgeable teaching assistants who can help me when I start flailing during my in-class live coding demos, it makes sense to use R. 
+
+## An open source book
+
+This book is meant to be a living document, which is why its source is available online at [https://github.com/poldrack/psych10-book](https://github.com/poldrack/psych10-book).  If you find any errors in the book or want to make a suggestion for how to improve it, please open an issue on the Github site. Even better, submit a pull request with your suggested change.  
+
+The book is licensed according to the [Creative Commons Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/).  Please see the terms of that license for more details.
+
+## Acknowledgements
+
+I'd first like to thank Susan Holmes, who first inspired me to consider writing my own statistics book.  Anna Khazenzon provided early comments and inspiration.  Lucy King provided detailed comments and edits on the entire book, and helped clean up the code so that it was consistent with the Tidyverse.  Michael Henry Tessler provided very helpful comments on the Bayesian analysis chapter. Particular thanks also go to Yihui Xie, creator of the Bookdown package, for improving the book's use of Bookdown features (including the ability for users to directly generate edits via the Edit button).  
+
+I'd also like to thank others who provided helpful comments and suggestions: Athanassios Protopapas, Wesley Tansey, Jack Van Horn, Thor Aspelund.
+
+Thanks to the following Twitter users for helpful suggestions: \@enoriverbend
+
+Thanks to the man individuals who have contributed edits or issues by Github or email: 
+Isis Anderson, Larissa Bersh, Isil Bilgin, Forrest Dollins, Chuanji Gao, Alan He, James Kent, Dan Kessler, Philipp Kuhnke, Leila Madeleine, Kirsten Mettler, Shanaathanan Modchalingam, Martijn Stegeman, Mehdi Rahim, Jassary Rico-Herrera, Mingquian Tan, Wenjin Tao, Laura Tobar, Albane Valenzuela, Alexander Wang, Michael Waskom, 
+barbyh, basicv8vc, brettelizabeth, codetrainee, dzonimn, epetsen, carlosivanr, hktang, jiamingkong, khtan, kiyofumi-kan, ttaweel.
+
+Special thanks to Isil Bilgin for assistance in fixing many of these issues.  
